@@ -31,10 +31,12 @@ export function useWizard(walletAddress?: string): WizardState {
       : "skip"
   );
   const completeStepMutation = useSafeMutation(api.builders.completeStep);
+  const upsertBuilderMutation = useSafeMutation(api.builders.upsertBuilder);
 
   // --- Local state ---
   const [localCurrentStep, setLocalCurrentStep] = useState(0);
   const [localCompletedSteps, setLocalCompletedSteps] = useState<number[]>([]);
+  const [localStartedAt, setLocalStartedAt] = useState<number | null>(null);
 
   // Track whether we've synced Convex data at least once
   const hasSynced = useRef(false);
@@ -44,6 +46,9 @@ export function useWizard(walletAddress?: string): WizardState {
     if (useConvex && builderData) {
       setLocalCurrentStep(builderData.currentStep);
       setLocalCompletedSteps(builderData.completedSteps);
+      if (builderData.startedAt != null) {
+        setLocalStartedAt(builderData.startedAt);
+      }
       hasSynced.current = true;
     }
   }, [useConvex, builderData]);
@@ -62,6 +67,10 @@ export function useWizard(walletAddress?: string): WizardState {
   const completedSteps = useConvex && builderData
     ? builderData.completedSteps
     : localCompletedSteps;
+
+  const startedAt = useConvex && builderData
+    ? (builderData.startedAt ?? null)
+    : localStartedAt;
 
   const getStepStatus = useCallback(
     (stepNumber: number): StepStatus => {
@@ -112,13 +121,33 @@ export function useWizard(walletAddress?: string): WizardState {
     }
   }, [currentStep, useConvex, normalizedWallet, completeStepMutation]);
 
+  const setStartedAt = useCallback(
+    (timestamp: number) => {
+      // Optimistic local update
+      setLocalStartedAt(timestamp);
+
+      // Persist to Convex if connected
+      if (useConvex && upsertBuilderMutation && normalizedWallet) {
+        upsertBuilderMutation({
+          walletAddress: normalizedWallet,
+          currentStep,
+          completedSteps,
+          startedAt: timestamp,
+        });
+      }
+    },
+    [useConvex, normalizedWallet, upsertBuilderMutation, currentStep, completedSteps]
+  );
+
   return {
     currentStep: useConvex && builderData ? currentStep : localCurrentStep,
     completedSteps: useConvex && builderData ? completedSteps : localCompletedSteps,
     isLoading,
+    startedAt,
     getStepStatus,
     goToStep,
     completeCurrentStep,
     canNavigateToStep,
+    setStartedAt,
   };
 }

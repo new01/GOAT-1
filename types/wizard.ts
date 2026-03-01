@@ -15,10 +15,12 @@ export interface WizardState {
   currentStep: number;
   completedSteps: number[];
   isLoading: boolean;
+  startedAt: number | null;
   getStepStatus: (stepNumber: number) => StepStatus;
   goToStep: (stepNumber: number) => void;
   completeCurrentStep: () => void;
   canNavigateToStep: (stepNumber: number) => boolean;
+  setStartedAt: (timestamp: number) => void;
 }
 
 export const STEPS: StepDefinition[] = [

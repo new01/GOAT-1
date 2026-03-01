@@ -26,6 +26,7 @@ export const upsertBuilder = mutation({
     walletAddress: v.string(),
     currentStep: v.number(),
     completedSteps: v.array(v.number()),
+    startedAt: v.optional(v.number()),
   },
   handler: async (ctx, args) => {
     const wallet = args.walletAddress.toLowerCase();
@@ -34,11 +35,16 @@ export const upsertBuilder = mutation({
       .withIndex("by_wallet", (q) => q.eq("walletAddress", wallet))
       .unique();
 
+    const patch: Record<string, unknown> = {
+      currentStep: args.currentStep,
+      completedSteps: args.completedSteps,
+    };
+    if (args.startedAt !== undefined) {
+      patch.startedAt = args.startedAt;
+    }
+
     if (existing) {
-      await ctx.db.patch(existing._id, {
-        currentStep: args.currentStep,
-        completedSteps: args.completedSteps,
-      });
+      await ctx.db.patch(existing._id, patch);
       return existing._id;
     }
 
@@ -46,6 +52,7 @@ export const upsertBuilder = mutation({
       walletAddress: wallet,
       completedSteps: args.completedSteps,
       currentStep: args.currentStep,
+      startedAt: args.startedAt,
     });
   },
 });

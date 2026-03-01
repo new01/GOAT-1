@@ -1,5 +1,6 @@
 "use client";
 
+import { useAccount } from "wagmi";
 import { STEPS } from "@/types/wizard";
 import { useWizard } from "@/hooks/use-wizard";
 import { STEP_COMPONENTS } from "@/components/wizard/steps";
@@ -7,12 +8,9 @@ import { WizardHeader } from "@/components/wizard/wizard-header";
 import { WizardSidebar } from "@/components/wizard/wizard-sidebar";
 import { WizardStep } from "@/components/wizard/wizard-step";
 
-interface WizardShellProps {
-  walletAddress?: string;
-}
-
-export function WizardShell({ walletAddress }: WizardShellProps) {
-  const wizard = useWizard(walletAddress);
+export function WizardShell() {
+  const { address, chain } = useAccount();
+  const wizard = useWizard(address);
 
   if (wizard.isLoading) {
     return (
@@ -32,9 +30,30 @@ export function WizardShell({ walletAddress }: WizardShellProps) {
   const StepComponent =
     STEP_COMPONENTS[wizard.currentStep as keyof typeof STEP_COMPONENTS];
 
+  // Build step-specific props for StepConnectWallet
+  const stepProps: Record<string, unknown> = {
+    step: currentStepDef,
+    status: wizard.getStepStatus(wizard.currentStep),
+    onComplete: wizard.completeCurrentStep,
+  };
+
+  // Pass extra props for the connect wallet step
+  if (wizard.currentStep === 0) {
+    stepProps.startedAt = wizard.startedAt;
+    stepProps.onStartTimer = () => {
+      if (wizard.startedAt == null) {
+        wizard.setStartedAt(Date.now());
+      }
+    };
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
-      <WizardHeader />
+      <WizardHeader
+        walletAddress={address}
+        chainName={chain?.name}
+        startedAt={wizard.startedAt}
+      />
       <div className="flex flex-1">
         <WizardSidebar
           steps={STEPS}
@@ -45,9 +64,7 @@ export function WizardShell({ walletAddress }: WizardShellProps) {
         <main className="flex-1 overflow-hidden p-8">
           <WizardStep stepIndex={wizard.currentStep}>
             <StepComponent
-              step={currentStepDef}
-              status={wizard.getStepStatus(wizard.currentStep)}
-              onComplete={wizard.completeCurrentStep}
+              {...(stepProps as any)}
             />
           </WizardStep>
         </main>
