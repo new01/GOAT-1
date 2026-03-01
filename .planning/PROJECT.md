@@ -2,11 +2,11 @@
 
 ## What This Is
 
-A single-page onboarding wizard that takes a brand-new builder from zero to a live demo transaction on GOAT Testnet3 in under 2 minutes. It replaces the manual hackathon checklist with a guided 5-step experience, a troubleshooter panel for common failures, and a shareable proof page for judges.
+A single-page onboarding wizard that takes a brand-new builder from zero to a live demo transaction on GOAT Testnet3 in under 2 minutes. It replaces the manual hackathon checklist with a guided experience that sets up the builder's OpenClaw AI agent with an on-chain identity (ERC-8004), payment capabilities (x402), and Telegram connectivity. Includes a troubleshooter panel for common failures and a shareable proof page for judges.
 
 ## Core Value
 
-Time-to-first-success under 2 minutes — a builder with no prior GOAT experience completes all setup and runs a live demo transaction, visibly safer than "paste keys into random places."
+Time-to-first-success under 2 minutes — a builder with no prior GOAT experience sets up their OpenClaw agent on GOAT with identity, payments, and Telegram, then runs a live demo transaction. Visibly safer than "paste keys into random places."
 
 ## Requirements
 
@@ -26,6 +26,8 @@ Time-to-first-success under 2 minutes — a builder with no prior GOAT experienc
 - [ ] Shareable proof page (single URL: "This agent is live" + identity + last tx + payment receipt)
 - [ ] Convex backend for storing builder progress keyed to wallet address
 - [ ] Wallet-based authentication (wallet address = identity)
+- [ ] OpenClaw agent setup guidance (install OpenClaw, configure agent, wire to GOAT)
+- [ ] OpenClaw heartbeat configuration for GOAT monitoring
 
 ### Out of Scope
 
@@ -50,6 +52,7 @@ Time-to-first-success under 2 minutes — a builder with no prior GOAT experienc
 **Key primitives:**
 - **ERC-8004** — Agent identity standard. Each agent gets a unique agentId (ERC-721 NFT) with name, description, services, and x402Support flag.
 - **x402** — Pay-per-use HTTP payment standard. Server returns 402; client pays on-chain; server verifies and returns response. Uses USDC/USDT on GOAT Testnet3.
+- **OpenClaw** — Open-source autonomous AI agent framework (formerly Clawdbot/Moltbot). Runs locally (Node 22+), connects to Telegram/Discord/Slack. Features a "heartbeat" mechanic for proactive monitoring (periodic agent turns every 30min). Deeply integrates with ERC-8004 identity and x402 payments. Install: `npm install -g openclaw@latest`, onboard: `openclaw onboard --install-daemon`. Docs: https://docs.openclaw.ai
 - **@goathackbot** — Telegram bot that provisions credentials: creates x402 merchant account, registers ERC-8004 identity, funds wallet with test tokens, and provides .env values.
 
 **Wallet setup guidance (Step 1 "no wallet?" flow):**
@@ -91,6 +94,7 @@ app.use('/api/generate', x402.middleware({ amount: '0.1', symbol: 'USDC' }))
 | Guide + paste for credentials | Bot API not available for direct integration; guide user through DM flow | — Pending |
 | Next.js on Vercel | Natural fit for SSR + Vercel deployment | — Pending |
 | Single-page wizard (not multi-page) | Keeps all 5 steps visible, shows progress at a glance | — Pending |
+| OpenClaw as primary agent framework | GOAT is an agentic transactions platform; OpenClaw deeply integrates ERC-8004 + x402 | — Pending |
 
 ---
-*Last updated: 2026-02-28 after initialization*
+*Last updated: 2026-02-28 after adding OpenClaw integration*
