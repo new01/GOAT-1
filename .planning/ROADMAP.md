@@ -12,7 +12,7 @@ This roadmap takes a builder from an empty project to a fully functional 5-step 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation + Wizard Shell** - Next.js + Convex + chain config + provider stack + 5-step wizard shell with persistence
+- [x] **Phase 1: Foundation + Wizard Shell** - Next.js + Convex + chain config + provider stack + 5-step wizard shell with persistence
 - [ ] **Phase 2: Wallet Connection** - RainbowKit wallet connect, network detection/switch, balance display, no-wallet guide
 - [ ] **Phase 3: Identity + Payment Credentials** - ERC-8004 identity registration/polling and x402 credential paste/storage
 - [ ] **Phase 4: Telegram + OpenClaw + Demo Transaction** - Telegram bot wiring, OpenClaw agent setup, and end-to-end demo tx execution
@@ -33,8 +33,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md -- Project scaffold (Next.js + Convex + deps + chain config + provider stack + Convex schema)
-- [ ] 01-02-PLAN.md -- Wizard shell UI (5-step sidebar, header, step animations, step registry) + x402 spike API route
-- [ ] 01-03-PLAN.md -- Convex persistence wiring (connect wizard to Convex backend) + visual verification checkpoint
+- [x] 01-02-PLAN.md -- Wizard shell UI (5-step sidebar, header, step animations, step registry) + x402 spike API route
+- [x] 01-03-PLAN.md -- Convex persistence wiring (connect wizard to Convex backend) + visual verification checkpoint
 
 ### Phase 2: Wallet Connection
 **Goal**: Users can connect their wallet, land on GOAT Testnet3, see their balances, and get help if they have no wallet -- completing Step 1 of the wizard
@@ -104,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation + Wizard Shell | 0/3 | Planned | - |
+| 1. Foundation + Wizard Shell | 3/3 | Complete | 2026-02-28 |
 | 2. Wallet Connection | 0/2 | Not started | - |
 | 3. Identity + Payment Credentials | 0/2 | Not started | - |
 | 4. Telegram + OpenClaw + Demo Transaction | 0/3 | Not started | - |
