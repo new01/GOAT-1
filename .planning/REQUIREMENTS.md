@@ -56,7 +56,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Wizard UX
 
 - [ ] **WIZ-01**: 5-step horizontal progress stepper showing completed/current/upcoming states
-- [ ] **WIZ-02**: Step completion persisted in Convex keyed to wallet address — progress survives page refresh
+- [x] **WIZ-02**: Step completion persisted in Convex keyed to wallet address — progress survives page refresh
 - [ ] **WIZ-03**: All steps visible in sidebar at all times; only current step is interactive
 - [ ] **WIZ-04**: Basic inline error messages per step with actionable fix instructions
 - [ ] **WIZ-05**: Copy-to-clipboard buttons for all bot command payloads with visual feedback
@@ -140,7 +140,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEMO-05 | Phase 4 | Pending |
 | DEMO-06 | Phase 4 | Pending |
 | WIZ-01 | Phase 1 | Pending |
-| WIZ-02 | Phase 1 | Pending |
+| WIZ-02 | Phase 1 | Complete |
 | WIZ-03 | Phase 1 | Pending |
 | WIZ-04 | Phase 2 | Pending |
 | WIZ-05 | Phase 3 | Pending |

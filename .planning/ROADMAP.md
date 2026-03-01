@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans in 3 waves
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffold (Next.js + Convex + deps + chain config + provider stack + Convex schema)
+- [x] 01-01-PLAN.md -- Project scaffold (Next.js + Convex + deps + chain config + provider stack + Convex schema)
 - [ ] 01-02-PLAN.md -- Wizard shell UI (5-step sidebar, header, step animations, step registry) + x402 spike API route
 - [ ] 01-03-PLAN.md -- Convex persistence wiring (connect wizard to Convex backend) + visual verification checkpoint
 
