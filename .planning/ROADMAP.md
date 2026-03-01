@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Convex backend is deployed with a `builders` table and schema; step completion persists across page refreshes when keyed to a wallet address
   3. GOAT Testnet3 chain config (chain ID 48816, RPC, explorer, token addresses) is defined in a single constants file and used by the provider stack
   4. A test Next.js API route successfully initializes the x402 SDK and handles a request/response cycle (spike -- confirms the approach for Phase 4)
-**Plans**: TBD
+**Plans**: 3 plans in 3 waves
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md -- Project scaffold (Next.js + Convex + deps + chain config + provider stack + Convex schema)
+- [ ] 01-02-PLAN.md -- Wizard shell UI (5-step sidebar, header, step animations, step registry) + x402 spike API route
+- [ ] 01-03-PLAN.md -- Convex persistence wiring (connect wizard to Convex backend) + visual verification checkpoint
 
 ### Phase 2: Wallet Connection
 **Goal**: Users can connect their wallet, land on GOAT Testnet3, see their balances, and get help if they have no wallet -- completing Step 1 of the wizard
@@ -104,7 +104,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation + Wizard Shell | 0/3 | Not started | - |
+| 1. Foundation + Wizard Shell | 0/3 | Planned | - |
 | 2. Wallet Connection | 0/2 | Not started | - |
 | 3. Identity + Payment Credentials | 0/2 | Not started | - |
 | 4. Telegram + OpenClaw + Demo Transaction | 0/3 | Not started | - |
