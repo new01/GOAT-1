@@ -46,11 +46,11 @@ Plans:
   3. User without any wallet sees a "No wallet?" guide with MetaMask install steps and manual GOAT Testnet3 network configuration
   4. User can see BTC, USDC, and USDT balances on GOAT Testnet3 with a faucet link when any balance is zero
   5. Inline error messages appear with actionable fix instructions when wallet connection or network switching fails
-**Plans**: TBD
+**Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md -- Connect Wallet step (RainbowKit + network switching + balances + no-wallet guide + header integration + timer)
+- [ ] 02-02-PLAN.md -- x402 env setup + visual verification checkpoint
 
 ### Phase 3: Identity + Payment Credentials
 **Goal**: Users can register their ERC-8004 agent identity and provide x402 merchant credentials -- completing Steps 2 and 3 of the wizard
