@@ -6,10 +6,22 @@
  * Run `npx convex dev` to regenerate with your actual API types.
  *
  * This stub allows TypeScript compilation before Convex is initialized.
+ * It provides the correct shape so that api.builders.* references resolve
+ * at build time (even though the actual Convex backend is not connected).
  */
 // @ts-nocheck
 import type { AnyApi } from "convex/server";
 
-// Placeholder api object -- will be fully typed after running `npx convex dev`
-export const api: AnyApi = {} as AnyApi;
+// Stub function references -- these match the exports from convex/builders.ts
+// They will be replaced with fully-typed references after `npx convex dev`
+const stubFn = (() => {}) as any;
+
+// Placeholder api object with correct module shape
+export const api: AnyApi = {
+  builders: {
+    getByWallet: stubFn,
+    upsertBuilder: stubFn,
+    completeStep: stubFn,
+  },
+} as any;
 export const internal: AnyApi = {} as AnyApi;

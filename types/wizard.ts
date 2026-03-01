@@ -14,6 +14,7 @@ export interface StepDefinition {
 export interface WizardState {
   currentStep: number;
   completedSteps: number[];
+  isLoading: boolean;
   getStepStatus: (stepNumber: number) => StepStatus;
   goToStep: (stepNumber: number) => void;
   completeCurrentStep: () => void;
