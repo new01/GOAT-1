@@ -1,9 +1,7 @@
 "use client";
 
+import { WizardShell } from "@/components/wizard/wizard-shell";
+
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">Hello GOAT</h1>
-    </div>
-  );
+  return <WizardShell />;
 }
