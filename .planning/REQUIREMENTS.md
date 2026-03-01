@@ -39,7 +39,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### OpenClaw Agent Setup
 
-- [ ] **CLAW-01**: Wizard detects if user already has OpenClaw installed (asks user via toggle/question)
+- [ ] **CLAW-01**: Wizard asks user if they already have OpenClaw installed (simple yes/no question, no autodetection)
 - [ ] **CLAW-02**: Users without OpenClaw see step-by-step install guide (`npm install -g openclaw@latest`, `openclaw onboard --install-daemon`)
 - [ ] **CLAW-03**: Wizard provides OpenClaw configuration instructions to connect agent to GOAT Testnet3 for the demo transaction
 - [ ] **CLAW-04**: User's OpenClaw agent is configured to execute the test x402 transaction on GOAT
@@ -111,49 +111,49 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| WALL-01 | TBD | Pending |
-| WALL-02 | TBD | Pending |
-| WALL-03 | TBD | Pending |
-| WALL-04 | TBD | Pending |
-| WALL-05 | TBD | Pending |
-| IDEN-01 | TBD | Pending |
-| IDEN-02 | TBD | Pending |
-| IDEN-03 | TBD | Pending |
-| IDEN-04 | TBD | Pending |
-| IDEN-05 | TBD | Pending |
-| PAY-01 | TBD | Pending |
-| PAY-02 | TBD | Pending |
-| PAY-03 | TBD | Pending |
-| PAY-04 | TBD | Pending |
-| PAY-05 | TBD | Pending |
-| TELE-01 | TBD | Pending |
-| TELE-02 | TBD | Pending |
-| TELE-03 | TBD | Pending |
-| CLAW-01 | TBD | Pending |
-| CLAW-02 | TBD | Pending |
-| CLAW-03 | TBD | Pending |
-| CLAW-04 | TBD | Pending |
-| DEMO-01 | TBD | Pending |
-| DEMO-02 | TBD | Pending |
-| DEMO-03 | TBD | Pending |
-| DEMO-04 | TBD | Pending |
-| DEMO-05 | TBD | Pending |
-| DEMO-06 | TBD | Pending |
-| WIZ-01 | TBD | Pending |
-| WIZ-02 | TBD | Pending |
-| WIZ-03 | TBD | Pending |
-| WIZ-04 | TBD | Pending |
-| WIZ-05 | TBD | Pending |
-| PROOF-01 | TBD | Pending |
-| PROOF-02 | TBD | Pending |
-| PROOF-03 | TBD | Pending |
-| PROOF-04 | TBD | Pending |
+| WALL-01 | Phase 2 | Pending |
+| WALL-02 | Phase 2 | Pending |
+| WALL-03 | Phase 2 | Pending |
+| WALL-04 | Phase 2 | Pending |
+| WALL-05 | Phase 2 | Pending |
+| IDEN-01 | Phase 3 | Pending |
+| IDEN-02 | Phase 3 | Pending |
+| IDEN-03 | Phase 3 | Pending |
+| IDEN-04 | Phase 3 | Pending |
+| IDEN-05 | Phase 3 | Pending |
+| PAY-01 | Phase 3 | Pending |
+| PAY-02 | Phase 3 | Pending |
+| PAY-03 | Phase 3 | Pending |
+| PAY-04 | Phase 3 | Pending |
+| PAY-05 | Phase 3 | Pending |
+| TELE-01 | Phase 4 | Pending |
+| TELE-02 | Phase 4 | Pending |
+| TELE-03 | Phase 4 | Pending |
+| CLAW-01 | Phase 4 | Pending |
+| CLAW-02 | Phase 4 | Pending |
+| CLAW-03 | Phase 4 | Pending |
+| CLAW-04 | Phase 4 | Pending |
+| DEMO-01 | Phase 4 | Pending |
+| DEMO-02 | Phase 4 | Pending |
+| DEMO-03 | Phase 4 | Pending |
+| DEMO-04 | Phase 4 | Pending |
+| DEMO-05 | Phase 4 | Pending |
+| DEMO-06 | Phase 4 | Pending |
+| WIZ-01 | Phase 1 | Pending |
+| WIZ-02 | Phase 1 | Pending |
+| WIZ-03 | Phase 1 | Pending |
+| WIZ-04 | Phase 2 | Pending |
+| WIZ-05 | Phase 3 | Pending |
+| PROOF-01 | Phase 5 | Pending |
+| PROOF-02 | Phase 5 | Pending |
+| PROOF-03 | Phase 5 | Pending |
+| PROOF-04 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 37 total
-- Mapped to phases: 0
-- Unmapped: 37 ⚠️
+- Mapped to phases: 37
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-28*
-*Last updated: 2026-02-28 after initial definition*
+*Last updated: 2026-02-28 after roadmap creation*
