@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Wallet & Network
 
-- [ ] **WALL-01**: User can connect wallet via RainbowKit modal (MetaMask, Rabby, Coinbase Wallet, WalletConnect)
-- [ ] **WALL-02**: Wizard detects wrong network and prompts one-click switch to GOAT Testnet3 (chain ID 48816)
-- [ ] **WALL-03**: User without a wallet sees "No wallet?" guide with MetaMask install steps and GOAT Testnet3 network config
-- [ ] **WALL-04**: Connected wallet address and network name displayed after successful connection
-- [ ] **WALL-05**: User can see BTC, USDC, and USDT balances on GOAT Testnet3 with faucet link when any balance is zero
+- [x] **WALL-01**: User can connect wallet via RainbowKit modal (MetaMask, Rabby, Coinbase Wallet, WalletConnect)
+- [x] **WALL-02**: Wizard detects wrong network and prompts one-click switch to GOAT Testnet3 (chain ID 48816)
+- [x] **WALL-03**: User without a wallet sees "No wallet?" guide with MetaMask install steps and GOAT Testnet3 network config
+- [x] **WALL-04**: Connected wallet address and network name displayed after successful connection
+- [x] **WALL-05**: User can see BTC, USDC, and USDT balances on GOAT Testnet3 with faucet link when any balance is zero
 
 ### Identity (ERC-8004)
 
@@ -58,7 +58,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **WIZ-01**: 5-step horizontal progress stepper showing completed/current/upcoming states
 - [x] **WIZ-02**: Step completion persisted in Convex keyed to wallet address — progress survives page refresh
 - [x] **WIZ-03**: All steps visible in sidebar at all times; only current step is interactive
-- [ ] **WIZ-04**: Basic inline error messages per step with actionable fix instructions
+- [x] **WIZ-04**: Basic inline error messages per step with actionable fix instructions
 - [ ] **WIZ-05**: Copy-to-clipboard buttons for all bot command payloads with visual feedback
 
 ### Proof Page
@@ -111,11 +111,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| WALL-01 | Phase 2 | Pending |
-| WALL-02 | Phase 2 | Pending |
-| WALL-03 | Phase 2 | Pending |
-| WALL-04 | Phase 2 | Pending |
-| WALL-05 | Phase 2 | Pending |
+| WALL-01 | Phase 2 | Complete |
+| WALL-02 | Phase 2 | Complete |
+| WALL-03 | Phase 2 | Complete |
+| WALL-04 | Phase 2 | Complete |
+| WALL-05 | Phase 2 | Complete |
 | IDEN-01 | Phase 3 | Pending |
 | IDEN-02 | Phase 3 | Pending |
 | IDEN-03 | Phase 3 | Pending |
@@ -142,7 +142,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WIZ-01 | Phase 1 | Complete |
 | WIZ-02 | Phase 1 | Complete |
 | WIZ-03 | Phase 1 | Complete |
-| WIZ-04 | Phase 2 | Pending |
+| WIZ-04 | Phase 2 | Complete |
 | WIZ-05 | Phase 3 | Pending |
 | PROOF-01 | Phase 5 | Pending |
 | PROOF-02 | Phase 5 | Pending |

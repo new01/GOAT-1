@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-01T02:53:29.578Z"
+status: in-progress
+last_updated: "2026-03-01T04:06:31Z"
 progress:
-  total_phases: 1
+  total_phases: 5
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 11
+  completed_plans: 4
 ---
 
 # Project State
@@ -18,33 +18,34 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-28)
 
 **Core value:** Time-to-first-success under 2 minutes -- builder sets up OpenClaw agent on GOAT with identity, payments, and Telegram, then runs a live demo transaction.
-**Current focus:** Phase 1: Foundation + Wizard Shell
+**Current focus:** Phase 2: Wallet Connection
 
 ## Current Position
 
-Phase: 1 of 5 (Foundation + Wizard Shell)
-Plan: 3 of 3 in current phase
-Status: Phase 1 COMPLETE -- all 3 plans executed and verified
-Last activity: 2026-02-28 -- Plan 01-03 (Convex persistence wiring) completed
+Phase: 2 of 5 (Wallet Connection)
+Plan: 1 of 2 in current phase
+Status: Plan 02-01 complete -- Connect Wallet step built with RainbowKit, network switching, balances, timer
+Last activity: 2026-03-01 -- Plan 02-01 (Connect Wallet step) completed
 
-Progress: [███░░░░░░░] 27%
+Progress: [████░░░░░░] 36%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 6min
-- Total execution time: 0.30 hours
+- Total plans completed: 4
+- Average duration: 16min
+- Total execution time: 1.05 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 3 | 18min | 6min |
+| 2 | 1 | 45min | 45min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (10min), 01-02 (3min), 01-03 (5min)
-- Trend: accelerating
+- Last 5 plans: 01-01 (10min), 01-02 (3min), 01-03 (5min), 02-01 (45min)
+- Trend: larger tasks as complexity increases
 
 *Updated after each plan completion*
 
@@ -66,6 +67,10 @@ Recent decisions affecting current work:
 - [01-03]: Created useSafeConvex hook to safely access Convex client when provider may not be mounted
 - [01-03]: Dual-mode useWizard: local useState when no wallet, Convex useQuery/useMutation when wallet provided
 - [01-03]: Optimistic local state in Convex mode prevents UI lag while mutation is in-flight
+- [02-01]: Used BigInt() constructor instead of 0n literal for ES target compatibility
+- [02-01]: Hardcoded 6 decimals for USDC/USDT rather than on-chain decimals() call
+- [02-01]: WizardShell uses useAccount() directly instead of accepting walletAddress prop
+- [02-01]: Timer starts on Continue click (not wallet connect) to track active wizard time
 
 ### Pending Todos
 
@@ -78,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-28
-Stopped at: Completed 01-03-PLAN.md (Convex persistence wiring) -- Phase 1 complete
+Last session: 2026-03-01
+Stopped at: Completed 02-01-PLAN.md (Connect Wallet step with RainbowKit, network switching, balances, timer)
 Resume file: None

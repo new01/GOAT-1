@@ -49,7 +49,7 @@ Plans:
 **Plans**: 2 plans in 2 waves
 
 Plans:
-- [ ] 02-01-PLAN.md -- Connect Wallet step (RainbowKit + network switching + balances + no-wallet guide + header integration + timer)
+- [x] 02-01-PLAN.md -- Connect Wallet step (RainbowKit + network switching + balances + no-wallet guide + header integration + timer)
 - [ ] 02-02-PLAN.md -- x402 env setup + visual verification checkpoint
 
 ### Phase 3: Identity + Payment Credentials
@@ -105,7 +105,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation + Wizard Shell | 3/3 | Complete | 2026-02-28 |
-| 2. Wallet Connection | 0/2 | Not started | - |
+| 2. Wallet Connection | 1/2 | In progress | - |
 | 3. Identity + Payment Credentials | 0/2 | Not started | - |
 | 4. Telegram + OpenClaw + Demo Transaction | 0/3 | Not started | - |
 | 5. Proof Page | 0/1 | Not started | - |
